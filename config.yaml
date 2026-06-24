@@ -2,6 +2,7 @@ rules:
   - RULE-SET,my_direc_rules,🎯 全球直连
   - RULE-SET,my_proxy_rules,🚀 手动选择
   - GEOSITE,google-cn,🚀 手动选择
+  - GEOSITE,github,🚀 手动选择
   
 rule-providers:
   my_proxy_rules:
