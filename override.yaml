@@ -1,12 +1,12 @@
 # 直接覆盖整个规则rules:将规则插入到原规则前面+rules:在原规则后面追加规则rules+:
-+external-controller: 0.0.0.0:9090
-+secret: "shutup" # 如果不想设密码，可以保持这一行留空或不写，但为了安全建议加上
-+rules:
+external-controller: 0.0.0.0:9090
+secret: "shutup" # 如果不想设密码，可以保持这一行留空或不写，但为了安全建议加上
+rules:
   - RULE-SET,my_direc_rules,🎯 全球直连
   - RULE-SET,my_proxy_rules,🚀 手动选择
   - GEOSITE,google-cn,🚀 手动选择
   - GEOSITE,github,🚀 手动选择
-+rule-providers:
+rule-providers:
   my_proxy_rules:
     behavior: classical
     interval: 28800
