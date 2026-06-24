@@ -1,6 +1,9 @@
 payload:
   # 1. 域名后缀匹配 (匹配 example.com 及其所有子域名)
   - DOMAIN-SUFFIX,google.com
+  - DOMAIN-SUFFIX,bgm.tv
+  - DOMAIN-SUFFIX,ubits.club
+  - DOMAIN-SUFFIX,m-team.cc
   
   # 2. 完整域名匹配 (仅匹配精确的域名)
   - DOMAIN,pting.club
