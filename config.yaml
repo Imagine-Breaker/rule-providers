@@ -1,3 +1,5 @@
+external-controller: 0.0.0.0:9090
+secret: "" # 如果不想设密码，可以保持这一行留空或不写，但为了安全建议加上
 rules:
   - RULE-SET,my_direc_rules,🎯 全球直连
   - RULE-SET,my_proxy_rules,🚀 手动选择
