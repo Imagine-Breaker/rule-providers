@@ -1,12 +1,12 @@
   my_proxy_rules:
     behavior: classical
     interval: 28800
-    path: ./providers/my_proxy_rules.yaml
+    path: ./providers/my_proxy_rules.mrs
     type: http
     url: https://gh-proxy.org/https://github.com/Imagine-Breaker/rule-providers/blob/main/my_proxy_rules.yaml
   my_direc_rules:
     behavior: classical
     interval: 28800
-    path: ./providers/my_direc_rules.yaml
+    path: ./providers/my_direc_rules.mrs
     type: http
     url: https://gh-proxy.org/https://github.com/Imagine-Breaker/rule-providers/blob/main/my_direc_rules.yaml
