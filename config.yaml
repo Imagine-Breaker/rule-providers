@@ -1,11 +1,26 @@
+# 直接覆盖整个规则rules:将规则插入到原规则前面+rules:在原规则后面追加规则rules+:
 external-controller: 0.0.0.0:9090
-secret: "" # 如果不想设密码，可以保持这一行留空或不写，但为了安全建议加上
-rules:
-  - RULE-SET,my_direc_rules,🎯 全球直连
-  - RULE-SET,my_proxy_rules,🚀 手动选择
-  - GEOSITE,google-cn,🚀 手动选择
-  - GEOSITE,github,🚀 手动选择
-  
+secret: "shutup" # 如果不想设密码，可以保持这一行留空或不写，但为了安全建议加上
+proxy-groups:
+  - name: 国外代理
+    type: select
+    include-all: true
+    exclude-type: "dns"
+    icon: https://ghfast.top/raw.githubusercontent.com/Koolson/Qure/refs/heads/master/IconSet/Color/Proxy.png
+
+  - name: 国内直连
+    type: select
+    proxies: [DIRECT]
+    include-all: true
+    exclude-type: "dns"
+    icon: https://ghfast.top/raw.githubusercontent.com/Koolson/Qure/refs/heads/master/IconSet/Color/China.png
+
+  - name: 漏网之鱼
+    type: select
+    proxies: [国外代理,国内直连]
+    icon: https://ghfast.top/raw.githubusercontent.com/Koolson/Qure/refs/heads/master/IconSet/Color/Final.png
+    
+
 rule-providers:
   my_proxy_rules:
     behavior: classical
@@ -19,3 +34,52 @@ rule-providers:
     path: ./providers/my_direc_rules.mrs
     type: http
     url: https://gh-proxy.org/https://github.com/Imagine-Breaker/rule-providers/blob/main/my_direc_rules.yaml
+  proxy_domain:
+    type: http
+    behavior: domain
+    format: mrs
+    interval: 86400
+    path: ./rule_provider/proxy_domain.mrs
+    url: "https://ghfast.top/github.com/DustinWin/ruleset_geodata/raw/refs/heads/mihomo-ruleset/proxy.mrs"
+    proxy: DIRECT
+  cn_ip:
+    type: http
+    behavior: ipcidr
+    format: mrs
+    interval: 86400
+    path: ./rule_provider/cn_ip.mrs
+    url: "https://ghfast.top/github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geoip/cn.mrs"
+    proxy: DIRECT
+  private_ip:
+    type: http
+    behavior: ipcidr
+    format: mrs
+    interval: 86400
+    path: ./rule_provider/private_ip.mrs
+    url: "https://ghfast.top/github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geoip/private.mrs"
+    proxy: DIRECT
+  cn_domain:
+    type: http
+    behavior: domain
+    format: mrs
+    interval: 86400
+    path: ./rule_provider/cn_domain.mrs
+    url: "https://ghfast.top/github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geosite/cn.mrs"
+    proxy: DIRECT
+  private_domain:
+    type: http
+    behavior: domain
+    format: mrs
+    interval: 86400
+    path: ./rule_provider/private_domain.mrs
+    url: "https://ghfast.top/github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geosite/private.mrs"
+    proxy: DIRECT
+
+rules:
+  - RULE-SET,my_direc_rules,国内直连
+  - RULE-SET,my_proxy_rules,国外代理
+  - GEOSITE,google-cn,国外代理
+  - GEOSITE,github,国外代理
+  - RULE-SET,proxy_domain,国外代理
+  - OR,((RULE-SET,cn_ip),(RULE-SET,cn_domain),(RULE-SET,private_ip),(RULE-SET,private_domain)),国内直连
+  - MATCH,漏网之鱼
