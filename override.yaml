@@ -20,12 +20,12 @@ proxy-groups!:
     proxies: [国外代理,国内直连]
     icon: https://ghfast.top/raw.githubusercontent.com/Koolson/Qure/refs/heads/master/IconSet/Color/Final.png
     
-rules:
++rules:
   - RULE-SET,my_direc_rules,国内直连
   - RULE-SET,my_proxy_rules,国外代理
   - GEOSITE,google-cn,国外代理
   - GEOSITE,github,国外代理
-rule-providers:
++rule-providers:
   my_proxy_rules:
     behavior: classical
     interval: 28800
