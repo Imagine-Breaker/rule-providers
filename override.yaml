@@ -40,7 +40,7 @@ rule-providers:
     format: mrs
     interval: 86400
     path: ./rule_provider/proxy_domain.mrs
-    url: "https://ghfast.top/github.com/DustinWin/ruleset_geodata/raw/refs/heads/mihomo-ruleset/proxy.mrs"
+    url: "https://gh-proxy.org/github.com/DustinWin/ruleset_geodata/raw/refs/heads/mihomo-ruleset/proxy.mrs"
     proxy: DIRECT
   cn_ip:
     type: http
@@ -48,7 +48,7 @@ rule-providers:
     format: mrs
     interval: 86400
     path: ./rule_provider/cn_ip.mrs
-    url: "https://ghfast.top/github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geoip/cn.mrs"
+    url: "https://gh-proxy.org/github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geoip/cn.mrs"
     proxy: DIRECT
   private_ip:
     type: http
@@ -56,7 +56,7 @@ rule-providers:
     format: mrs
     interval: 86400
     path: ./rule_provider/private_ip.mrs
-    url: "https://ghfast.top/github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geoip/private.mrs"
+    url: "https://gh-proxy.org/github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geoip/private.mrs"
     proxy: DIRECT
   cn_domain:
     type: http
@@ -64,7 +64,7 @@ rule-providers:
     format: mrs
     interval: 86400
     path: ./rule_provider/cn_domain.mrs
-    url: "https://ghfast.top/github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geosite/cn.mrs"
+    url: "https://gh-proxy.org/github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geosite/cn.mrs"
     proxy: DIRECT
   private_domain:
     type: http
@@ -72,7 +72,7 @@ rule-providers:
     format: mrs
     interval: 86400
     path: ./rule_provider/private_domain.mrs
-    url: "https://ghfast.top/github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geosite/private.mrs"
+    url: "https://gh-proxy.org/github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geosite/private.mrs"
     proxy: DIRECT
 
 rules:
