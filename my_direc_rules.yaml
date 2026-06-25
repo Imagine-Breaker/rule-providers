@@ -9,14 +9,7 @@ payload:
   #- DOMAIN-KEYWORD,netflix
   
   # 4. IP CIDR 匹配 (匹配整个 IP 段)
-  - IP-CIDR,10.0.0.0/8,no-resolve
-  - IP-CIDR,172.16.0.0/12,no-resolve
-  - IP-CIDR,192.168.0.0/16,no-resolve
-  - IP-CIDR,127.0.0.0/8,no-resolve
-  - IP-CIDR,100.64.0.0/10,no-resolve    # 运营商 CGNAT 宽带内网段
-  - IP-CIDR,169.254.0.0/16,no-resolve   # 本地链路链路本地地址 (Link-local)
-  - IP-CIDR6,fc00::/7,no-resolve
-  - IP-CIDR6,fe80::/10,no-resolve
-  - IP-CIDR6,::1/128,no-resolve
+  #- IP-CIDR,10.0.0.0/8,no-resolve
+
   # 5. 目标端口匹配
   - DST-PORT,22
