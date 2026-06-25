@@ -81,5 +81,8 @@ rules:
   - GEOSITE,google-cn,国外代理
   - GEOSITE,github,国外代理
   - RULE-SET,proxy_domain,国外代理
-  - OR,((RULE-SET,cn_ip),(RULE-SET,cn_domain),(RULE-SET,private_ip),(RULE-SET,private_domain)),国内直连
+  - RULE-SET,cn_ip,国内直连
+  - RULE-SET,cn_domain,国内直连
+  - RULE-SET,private_ip,国内直连
+  - RULE-SET,private_domain,国内直连
   - MATCH,漏网之鱼
