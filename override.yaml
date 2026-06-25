@@ -1,7 +1,7 @@
 # 直接覆盖整个规则rules:将规则插入到原规则前面+rules:在原规则后面追加规则rules+:
 external-controller: 0.0.0.0:9090
 secret: "shutup" # 如果不想设密码，可以保持这一行留空或不写，但为了安全建议加上
-proxy-groups!:
+proxy-groups:
   - name: 国外代理
     type: select
     include-all: true
@@ -20,11 +20,7 @@ proxy-groups!:
     proxies: [国外代理,国内直连]
     icon: https://ghfast.top/raw.githubusercontent.com/Koolson/Qure/refs/heads/master/IconSet/Color/Final.png
     
-+rules:
-  - RULE-SET,my_direc_rules,国内直连
-  - RULE-SET,my_proxy_rules,国外代理
-  - GEOSITE,google-cn,国外代理
-  - GEOSITE,github,国外代理
+
 +rule-providers:
   my_proxy_rules:
     behavior: classical
@@ -38,3 +34,9 @@ proxy-groups!:
     path: ./providers/my_direc_rules.mrs
     type: http
     url: https://gh-proxy.org/https://github.com/Imagine-Breaker/rule-providers/blob/main/my_direc_rules.yaml
+
++rules:
+  - RULE-SET,my_direc_rules,国内直连
+  - RULE-SET,my_proxy_rules,国外代理
+  - GEOSITE,google-cn,国外代理
+  - GEOSITE,github,国外代理
