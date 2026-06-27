@@ -5,6 +5,7 @@ payload:
   - DOMAIN-SUFFIX,ubits.club
   - DOMAIN-SUFFIX,m-team.cc
   - DOMAIN-SUFFIX,ghfast.top
+  - DOMAIN-SUFFIX,hdarea.club
   
   # 2. 完整域名匹配 (仅匹配精确的域名)
   - DOMAIN,pting.club
