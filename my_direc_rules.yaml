@@ -1,6 +1,6 @@
 payload:
   # 1. 域名后缀匹配 (匹配 example.com 及其所有子域名)
-  - DOMAIN-SUFFIX,hhanclub.net
+  #- DOMAIN-SUFFIX,hhanclub.net
   
   # 2. 完整域名匹配 (仅匹配精确的域名)
   - DOMAIN,www.baidu.com
